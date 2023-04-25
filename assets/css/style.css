@@ -1,0 +1,41 @@
+/* * {
+    box-sizing: border-box;
+} */
+
+body {
+    font-family: sans-serif;
+    background-color: blanchedalmond;
+    margin: none;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    background-color: slategray;
+}
+
+#welcome-page {
+    text-align: center;
+}
+
+#welcome-title {
+    font-size: 100px;
+}
+
+#welcome-words {
+    width: 50%;
+    margin: auto;
+    padding-bottom: 50px;
+}
+
+#next-page {
+    margin: auto;
+    display: none;
+}
+
+/* @media screen and (max-width: 768px) { 
+    main,
+    nav {
+        flex-direction: column;
+    }
+} */
