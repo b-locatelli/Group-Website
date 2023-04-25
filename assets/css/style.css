@@ -10,11 +10,12 @@ body {
 nav {
     display: flex;
     justify-content: space-between;
-    background-color: slategray;
+    background-color: darksalmon;
 }
 
 #welcome-page {
     text-align: center;
+    display: block;
 }
 
 #welcome-title {
@@ -29,11 +30,11 @@ nav {
     font-size: 20px;
 }
 
-#search-box {
+#search-box-init {
     font-size: 20px;
 }
 
-#search-btn {
+#search-btn-init {
     font-size: 20px;
     border-radius: 10px;
 }
@@ -42,11 +43,11 @@ nav {
 
 #next-page {
     margin: auto;
-    display: block;
+    display: none; 
     text-align: center;
     padding: 20px;
     margin: 20px;
-    background-color: green;
+    background-color: slategray;
 }
 
 /* @media screen and (max-width: 768px) { 

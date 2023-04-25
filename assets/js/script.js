@@ -1,9 +1,15 @@
 var welcomePage = document.querySelector("#welcome-page");
 var nextPage = document.querySelector("#next-page");
-var searchButton = document.querySelector("#search-btn");
+var searchButtonA = document.querySelector("#search-btn-init");
+var searchAgain = document.querySelector("#search-again");
 
+searchAgain.addEventListener("click", function () {
+    welcomePage.style.display = "block";
+    nextPage.style.display = "none";
+});
 
-searchButton.addEventListener("click", function() { 
+// this one doesn't quite work - only flashes
+searchButtonA.addEventListener("click", function() { 
     welcomePage.style.display = "none";
     nextPage.style.display = "block";
 }); 

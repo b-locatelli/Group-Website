@@ -13,7 +13,7 @@
   <header>
     <nav>
         <h1>barFly</h1>
-        <h2>Search for your fav drink</h2>
+        <h2 id="search-again">Search for your fav drink</h2>
     </nav>
   </header>
 
@@ -26,28 +26,24 @@
             or find where to buy it using our map feature!</p>
         <div id="search-bar">
             <form>
-              <input type="text" name="drinkSearch" placeholder="Search..." id="search-box"/>
-              <button type="submit" id="search-btn">Search</button>
+                <input type="text" name="drinkSearch" placeholder="Search..." id="search-box-init"/>
+                <button type="submit" id="search-btn-init">Search</button>
             </form>
           </div>
     </div>
 
     <div id="next-page">
-      <div>
-        <form id="user-form" class="card-body">
-          <input type="text" name="drinkSearch" placeholder="Search..." />
-          <button type="submit" class="btn">Search</button>
-          <div id="drink-info">
+        <!-- <form id="user-form" class="card-body">
+            <input type="text" name="drinkSearch" placeholder="Search..." id="search-box"/>
+            <button type="submit" id="search-btn">Search</button>
+        </form> -->
+        <div id="drink-info">
             <p>Recipe here</p>
             <p>img here</p>
-          </div>
-          <div id="map-api">
+        </div>
+        <div id="map-api">
             <p>map stuff here</p>
-          </div>
-          
-        </form>
-      </div>
-
+        </div>
     </div>
 
   </main>
