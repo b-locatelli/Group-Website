@@ -28,6 +28,17 @@ nav {
     padding-bottom: 50px;
 }
 
+#search-box {
+    font-size: 20px;
+}
+
+#search-btn {
+    font-size: 20px;
+    border-radius: 10px;
+}
+
+
+
 #next-page {
     margin: auto;
     display: none;
