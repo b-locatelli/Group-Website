@@ -13,3 +13,6 @@ searchButtonA.addEventListener("click", function() {
     welcomePage.style.display = "none";
     nextPage.style.display = "block";
 }); 
+
+//TODO: show searched words on next-page after searchButtonA click
+// and fix second click listener to make next-page actually show

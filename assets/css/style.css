@@ -12,6 +12,7 @@ nav {
     justify-content: space-between;
     background-color: darksalmon;
 }
+/*fix header gap*/
 
 #welcome-page {
     text-align: center;
