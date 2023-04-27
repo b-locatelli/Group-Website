@@ -44,7 +44,7 @@ nav {
 
 #next-page {
     margin: auto;
-    display: none; 
+    /* display: none;  */
     text-align: center;
     padding: 20px;
     margin: 20px;
