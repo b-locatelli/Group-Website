@@ -8,8 +8,8 @@ body {
     font-family: sans-serif;
     background-color: blanchedalmond;
 }
-/* 
-nav {
+
+/*  nav {
     display: flex;
     justify-content: space-between;
     background-color: darksalmon;
@@ -19,6 +19,13 @@ nav {
     text-align: center;
     display: block;
 } */
+
+
+#welcome-page {
+    text-align: center;
+    display: block;
+}
+
 
 #welcome-title {
     padding-top: 100px;
@@ -32,20 +39,24 @@ nav {
     font-size: 20px;
 }
 
+
 /* #search-box-init {
     font-size: 20px;
 } */
+
+#search-box-init {
+    font-size: 20px;
+}
 
 #search-btn-init {
     font-size: 20px;
     border-radius: 10px;
 }
 
-
-
 #next-page {
     margin: auto;
     display: none; 
+    /* display: none;  */
     text-align: center;
     padding: 20px;
     margin: 20px;
