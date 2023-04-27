@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en US">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <title>barFly Cocktail Finder</title>
+</head>
+
+<body>
+    <header>
+        <nav class="navbar">
+            <div>
+                <h1 class="navbar-start">barFly</h1>
+                <h2 class="navbar-end">Search for your fav drink</h2>
+            </div>
+            
+        </nav>
+    </header>
+
+    <main>
+        <div id="welcome-page">
+            <h1 id="welcome-title" class="has-text-centered has-text-black">barFly</h1>
+            <p id="welcome-words">
+                Search for your drink of choice and barFly will show you 
+                the ingredients and recipe so you can make it at home 
+                or find where to buy it using our map feature!</p>
+            <div id="search-bar">
+                <!-- <form>
+                    <input type="text" name="drinkSearch" placeholder="Search..." id="search-box-init"/>
+                    <button type="submit" id="search-btn-init">Search</button>
+                </form> -->
+                <form class="column is-half is-offset-one-quarter">
+                    <div class="field">
+                        <div class="control">
+                            <input type="text" name="drinkSearch" class="input" placeholder=Search... id="search-box-init">
+                            <button type="submit" id="search-btn-init">Search</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <div id="next-page">
+            <!-- <form id="user-form" class="card-body">
+                <input type="text" name="drinkSearch" placeholder="Search..." id="search-box"/>
+                <button type="submit" id="search-btn">Search</button>
+            </form>  -->
+            <div id="drink-info">
+                <p>Recipe here</p>
+                <p>img here</p>
+            </div>
+            <div id="map-api">
+                <p>map stuff here</p>
+            </div>
+        </div>
+
+    </main>
+
+    <script src="assets/js/script.js"></script>
+    <script async
+        src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places&callback=initMap">
+    </script>
+</body>
+
+</html>
