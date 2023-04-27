@@ -40,22 +40,13 @@ body {
 }
 
 
-/* #search-box-init {
-    font-size: 20px;
-} */
-
-#search-box-init {
-    font-size: 20px;
-}
-
-#search-btn-init {
+/* #search-btn-init {
     font-size: 20px;
     border-radius: 10px;
-}
+} */
 
 #next-page {
     margin: auto;
-    display: none; 
     /* display: none;  */
     text-align: center;
     padding: 20px;
