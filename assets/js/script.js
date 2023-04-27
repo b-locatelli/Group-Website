@@ -2,7 +2,7 @@ var welcomePage = document.querySelector("#welcome-page");
 var nextPage = document.querySelector("#next-page");
 var searchButtonA = document.querySelector("#search-btn-init");
 var searchAgain = document.querySelector("#search-again");
-var responseText = document.getElementById('drink-info');
+// var responseText = document.getElementById('drink-info');
 
 // searchAgain.addEventListener("click", function () {
 //     welcomePage.style.display = "block";
@@ -24,10 +24,9 @@ var requestUrl = 'https://www.thecocktaildb.com/api/json/v1/1/random.php';
 
 function getApi(requestUrl) {
   fetch(requestUrl)
-    .then(function (response) {
+    .then(async function (response) {
       console.log(response);
       if (response.status === 200) {
-        responseText.textContent = response.status;
         
       }
       return response.json()
