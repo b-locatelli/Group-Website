@@ -11,12 +11,13 @@
 
 <body>
     <header>
-        <nav class="navbar">
-            <div>
-                <h1 class="navbar-start">barFly</h1>
-                <h2 class="navbar-end">Search for your fav drink</h2>
+        <nav class="navbar has-background-warning-dark is-flex is-justify-content-space-between">
+            <div class="navbar-start">
+                <h1 class="navbar-item has-text-warning-light is-size-3 has-text-weight-semibold">barFly</h1>
             </div>
-            
+            <div class="navbar-end">
+                <h1 class="navbar-item has-text-warning-light is-size-4">Search for drink &#128269</h1>
+            </div>
         </nav>
     </header>
 
@@ -32,14 +33,15 @@
                     <input type="text" name="drinkSearch" placeholder="Search..." id="search-box-init"/>
                     <button type="submit" id="search-btn-init">Search</button>
                 </form> -->
-                <form class="column is-half is-offset-one-quarter">
-                    <div class="field">
-                        <div class="control">
-                            <input type="text" name="drinkSearch" class="input" placeholder=Search... id="search-box-init">
-                            <button type="submit" id="search-btn-init">Search</button>
-                        </div>
+                <div class="column is-half is-offset-one-quarter field has-addons">
+                    <div class="control">
+                        <input class="input" type="text" id="search-box-init"placeholder="Find a drink...">
                     </div>
-                </form>
+                    <div class="control">
+                        <a class="button is-info">Search</a>
+                    </div>
+                </div>
+                
             </div>
         </div>
 

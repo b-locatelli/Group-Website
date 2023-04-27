@@ -1,17 +1,19 @@
 /* * {
     box-sizing: border-box;
+    margin: none;
+    padding: none;
 } */
 
 body {
     font-family: sans-serif;
     background-color: blanchedalmond;
 }
-
+/* 
 nav {
     display: flex;
     justify-content: space-between;
     background-color: darksalmon;
-}
+} */
 
 /* #welcome-page {
     text-align: center;
@@ -30,9 +32,9 @@ nav {
     font-size: 20px;
 }
 
-#search-box-init {
+/* #search-box-init {
     font-size: 20px;
-}
+} */
 
 #search-btn-init {
     font-size: 20px;
@@ -54,5 +56,6 @@ nav {
     main,
     nav {
         flex-direction: column;
+        align-items: center;
     }
 } */
