@@ -95,12 +95,7 @@ function generateRandomFood(meal){     // 2 start making function trnf data in c
   food.appendChild(instruction); //17 append to display area
 }
 
-
-// load random drink and food (hidden)
-// getApiDrink();
-// getApiFood();
-
-// shows the previously loaded meal and hides welcome msg
+// shows meal page and hides welcome page
 generateMealBtn.addEventListener("click", function() {
   welcomePage.style.display = "none";
   mealPage.style.display = "block";
@@ -124,14 +119,21 @@ generateFoodBtn.addEventListener("click", function(){
   getApiFood()
 });
 
+// DONE: ----------------------
 // moved API url's into the functions (local v global variable error (CORS))
 // made the buttons call the api func instead of random func bc it needs to be reloaded for new drink/food to appear
-// made the buttons actually work
+// made the generate buttons work
 // added a back to welcome page function and organized but didn't change getApi's much
 
+
+// NOT DONE: ------------------
 // MVP ERROR: generateRandom functions simply add new recipe to the page rather than replacing old
 // MVP FIX: when click button, replace old recipe with new
-// MVP ADD: 
-// more TODO: color styling, recipes as columns, flex, button styling, navbar functionality
 
-// maybe: add save function for favorite recipes. these could be accessed in the old search section
+// js TODO: use local storage 
+// maybe: add save function for favorite recipes. access in navbar or create sidebar linked in navbar myMeal
+
+// css TODO: colors, recipes as columns, flex, button styling, remove style.css
+// more TODO: add comments, READ.ME
+
+// make interactive? use modals?
