@@ -26,14 +26,10 @@
         <div id="welcome-page">
             <h1 id="welcome-title" class="has-text-centered has-text-black">barFly</h1>
             <p id="welcome-words">
-                Search for your drink of choice and barFly will show you 
-                the ingredients and recipe so you can make it at home 
-                or find where to buy it using our map feature!</p>
-            <div id="search-bar">
-                <!-- <form>
-                    <input type="text" name="drinkSearch" placeholder="Search..." id="search-box-init"/>
-                    <button type="submit" id="search-btn-init">Search</button>
-                </form> -->
+                Generate a random food and drink pair. barFly will show you 
+                the ingredients and recipes so you can make it at home! 
+            </p>
+            <!-- <div id="search-bar">
                 <div class="column is-half is-offset-one-quarter field has-addons">
                     <div class="control">
                         <input class="input" type="text" id="search-box-init"placeholder="Find a drink...">
@@ -41,21 +37,20 @@
                     <div class="control">
                         <a class="button is-info">Search</a>
                     </div>
-                </div>
-                
-            </div>
+                </div>               
+            </div> -->
         </div>
 
-        <div id="next-page">
-            <!-- <form id="user-form" class="card-body">
-                <input type="text" name="drinkSearch" placeholder="Search..." id="search-box"/>
-                <button type="submit" id="search-btn">Search</button>
-            </form>  -->
-            <div id="drink">
+        <div id="next-page" class="columns flex">
+            <div id="drink" class="column flex is-half has-text-black">
+                <button type="submit" id="search-btn-init" class="mb-4">Generate Drink</button>
             </div>
-            <div id="map-api">
+            <div id="food" class="column flex is-half">
+                <button type="submit" id="search-btn-init" class="mb-4">Generate Food</button>
+            </div>
+            <!-- <div id="map-api">
                 <p>map stuff here</p>
-            </div>
+            </div> -->
         </div>
 
     </main>
