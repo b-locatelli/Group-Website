@@ -64,7 +64,7 @@ function getApiFood() {
   })
   .then(function(data) {
     console.log(data);
-    console.log(data.meals[0].strMeal);
+    console.log(data.meals[0].strMeal); 
     generateRandomFood(data);    //1 made function to display data
   });
 }
@@ -113,6 +113,25 @@ mealPage.style.display = "none";
 });
 
 // these load a new drink or food individually when each button is clicked
-// FIXXX: these load the API's automatically rn. Change to only when clicked.
-generateDrinkBtn.addEventListener("click", getApiDrink());
-generateFoodBtn.addEventListener("click", getApiFood());
+generateMealBtn.addEventListener("click", function(){
+  getApiDrink();
+  getApiFood();
+});
+generateDrinkBtn.addEventListener("click", function(){
+  getApiDrink()
+});
+generateFoodBtn.addEventListener("click", function(){
+  getApiFood()
+});
+
+// moved API url's into the functions (local v global variable error (CORS))
+// made the buttons call the api func instead of random func bc it needs to be reloaded for new drink/food to appear
+// made the buttons actually work
+// added a back to welcome page function and organized but didn't change getApi's much
+
+// MVP ERROR: generateRandom functions simply add new recipe to the page rather than replacing old
+// MVP FIX: when click button, replace old recipe with new
+// MVP ADD: 
+// more TODO: color styling, recipes as columns, flex, button styling, navbar functionality
+
+// maybe: add save function for favorite recipes. these could be accessed in the old search section
