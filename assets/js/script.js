@@ -1,11 +1,11 @@
 var welcomePage = document.querySelector("#welcome-page");
 var mealPage = document.querySelector("#meal-page");
-var generateDrink = document.querySelector("#drink-generate");
-var generateFood = document.querySelector("#food-generate")
-var generateMeal = document.querySelector("#generate-btn")
+var generateDrinkBtn = document.querySelector("#drink-generate");
+var generateFoodBtn = document.querySelector("#food-generate")
+var generateMealBtn = document.querySelector("#generate-btn")
 var backToWelc = document.getElementById("back-to-welcome");
 
-generateMeal.addEventListener("click", function () {
+generateMealBtn.addEventListener("click", function () {
     welcomePage.style.display = "none";
     mealPage.style.display = "block";
 });
@@ -16,25 +16,22 @@ backToWelc.addEventListener("click", function () {
 });
 
 // DRINK API 
-var drinkUrl = 'https://www.thecocktaildb.com/api/json/v1/1/random.php';
-
-function getApiDrink(drinkUrl) {
+function getApiDrink() {
+  var drinkUrl = 'https://www.thecocktaildb.com/api/json/v1/1/random.php';
   fetch(drinkUrl)
     .then(async function (response) {
       console.log(response);
       if (response.status === 200) {
         
       }
-      return response.json()
-      .then(function (data){
-        //console.log(data);
-        displayRandomDrink(data);         //1 made function to display data
-      });
+      response.json()
+        .then(function(data) {
+          generateRandomDrink(data);         //1 made function to display data
+        });
   });
 }
-getApiDrink(drinkUrl);
 
-function displayRandomDrink(cocktail) {     // 2 start making function trnf data in cocktail arg
+function generateRandomDrink(cocktail) {     // 2 start making function trnf data in cocktail arg
   let drink = document.querySelector('#drink'); // 3 grab the element to display in
 
   let drinkName = document.createElement('h2');  // 4 to display name
@@ -65,25 +62,22 @@ function displayRandomDrink(cocktail) {     // 2 start making function trnf data
 }
 
 // FOOD API
-var foodUrl = 'https://www.themealdb.com/api/json/v1/1/random.php';
-
-function getApiFood(foodUrl) {
+function getApiFood() {
+  var foodUrl = 'https://www.themealdb.com/api/json/v1/1/random.php';
   fetch(foodUrl)
     .then(async function (response) {
       console.log(response);
       if (response.status === 200) {
-        
+
       }
-      return response.json()
-      .then(function (data){
-        //console.log(data);
-        displayRandomFood(data);         //1 made function to display data
-      });
+      response.json()
+        .then(function(data) {
+          generateRandomFood(data);         //1 made function to display data
+        });
   });
 }
-getApiFood(foodUrl);
 
-function displayRandomFood(meal){     // 2 start making function trnf data in cocktail arg
+function generateRandomFood(meal){     // 2 start making function trnf data in cocktail arg
   let food = document.querySelector('#food'); // 3 grab the element to display in
 
   let foodName= document.createElement('h2');  // 4 to display name
@@ -112,11 +106,15 @@ function displayRandomFood(meal){     // 2 start making function trnf data in co
   instruction.innerHTML = meal.meals[0].strInstructions; // 16 get instructions from data
 
   food.appendChild(instruction); //17 append to display area
-
 }
 
-function buttons() {
+getApiDrink();
+getApiFood();
+
+function generateMeal() {
   getApiDrink();
-  getApi();
+  getApiFood();
 }
-generateMeal.addEventListener("click", buttons);
+generateMealBtn.addEventListener("click", generateMeal);
+generateDrinkBtn.addEventListener("click", generateRandomDrink);
+generateFoodBtn.addEventListener("click", generateRandomFood);
