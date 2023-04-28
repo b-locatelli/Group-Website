@@ -115,6 +115,7 @@ function generateMeal() {
   getApiDrink();
   getApiFood();
 }
+
 generateMealBtn.addEventListener("click", generateMeal);
 generateDrinkBtn.addEventListener("click", generateRandomDrink);
 generateFoodBtn.addEventListener("click", generateRandomFood);
