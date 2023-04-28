@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
   <link rel="stylesheet" href="assets/css/style.css" />
-  <title>barFly Cocktail Finder</title>
+  <title>What's for dinner?</title>
 </head>
 
 <body>
@@ -14,7 +14,7 @@
     <header>
         <nav class="navbar has-background-warning-dark is-flex is-justify-content-space-between">
             <div class="navbar-start">
-                <h1 class="navbar-item has-text-warning-light is-size-3 has-text-weight-semibold">barFly</h1>
+                <h1 class="navbar-item has-text-warning-light is-size-3 has-text-weight-semibold">Meal Generator</h1>
             </div>
             <div class="navbar-end">
                 <h1 class="navbar-item has-text-warning-light is-size-4">Search for drink &#128269</h1>
@@ -24,11 +24,16 @@
 
     <main>
         <div id="welcome-page">
-            <h1 id="welcome-title" class="has-text-centered has-text-black">barFly</h1>
+            <h1 id="welcome-title" class="has-text-centered has-text-black">What's for Dinner?</h1>
             <p id="welcome-words">
-                Generate a random food and drink pair. barFly will show you 
+                Generate a random food and drink pair. Meal generator will show you 
                 the ingredients and recipes so you can make it at home! 
             </p>
+            <div class="columns flex">
+                <div class="column flex is-half has-text-black">
+                    <button type="submit" id="generate" class="mb-4">Make a Meal</button>
+                </div>
+            </div>
             <!-- <div id="search-bar">
                 <div class="column is-half is-offset-one-quarter field has-addons">
                     <div class="control">
@@ -41,14 +46,14 @@
             </div> -->
         </div>
 
-        <div id="next-page" class="columns flex">
+        <div id="next-page" class="columns flex" hidden="true">
             <div id="drink" class="column flex is-half has-text-black">
-                <button type="submit" id="search-btn-init" class="mb-4">Generate Drink</button>
+                <button type="submit" id="drinkGenerate" class="mb-4">Try a new drink?</button>
             </div>
             <div id="food" class="column flex is-half">
-                <button type="submit" id="search-btn-init" class="mb-4">Generate Food</button>
+                <button type="submit" id="foodGenerate" class="mb-4">Try a new food?</button>
             </div>
-            <!-- <div id="map-api">
+            <!-- <div id="drink">
                 <p>map stuff here</p>
             </div> -->
         </div>
@@ -56,9 +61,6 @@
     </main>
 
     <script src="./assets/js/script.js"></script>
-    <script async
-        src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places&callback=initMap">
-    </script>
 
 </body>
 
