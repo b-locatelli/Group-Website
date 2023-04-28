@@ -14,10 +14,10 @@
     <header>
         <nav class="navbar has-background-warning-dark is-flex is-justify-content-space-between">
             <div class="navbar-start">
-                <h1 class="navbar-item has-text-warning-light is-size-3 has-text-weight-semibold">Meal Generator</h1>
+                <h1 id="back-to-welcome" class="navbar-item has-text-warning-light is-size-3 has-text-weight-semibold">myMeal</h1>
             </div>
             <div class="navbar-end">
-                <h1 class="navbar-item has-text-warning-light is-size-4">Search for drink &#128269</h1>
+                <h1 class="navbar-item has-text-warning-light is-size-4">Fix This &#128269</h1>
             </div>
         </nav>
     </header>
@@ -26,42 +26,28 @@
         <div id="welcome-page">
             <h1 id="welcome-title" class="has-text-centered has-text-black">What's for Dinner?</h1>
             <p id="welcome-words">
-                Generate a random food and drink pair. Meal generator will show you 
-                the ingredients and recipes so you can make it at home! 
+                myMeal will generate a random food and drink pair for you so that you don't have to decide!
+                The ingredients and recipes listed will show you just how to attain the perfect meal.
             </p>
             <div class="columns flex">
                 <div class="column flex is-half has-text-black">
-                    <button type="submit" id="generate" class="mb-4">Make a Meal</button>
+                    <button type="submit" id="generate-btn" class="mb-4">Make a Meal</button>
                 </div>
             </div>
-            <!-- <div id="search-bar">
-                <div class="column is-half is-offset-one-quarter field has-addons">
-                    <div class="control">
-                        <input class="input" type="text" id="search-box-init"placeholder="Find a drink...">
-                    </div>
-                    <div class="control">
-                        <a class="button is-info">Search</a>
-                    </div>
-                </div>               
-            </div> -->
         </div>
 
-        <div id="next-page" class="columns flex" hidden="true">
+        <div id="meal-page" class="columns flex" hidden="true">
             <div id="drink" class="column flex is-half has-text-black">
-                <button type="submit" id="drinkGenerate" class="mb-4">Try a new drink?</button>
+                <button type="submit" id="drink-generate" class="mb-4">Try a new drink?</button>
             </div>
-            <div id="food" class="column flex is-half">
-                <button type="submit" id="foodGenerate" class="mb-4">Try a new food?</button>
+            <div id="food" class="column flex is-half has-text-black">
+                <button type="submit" id="food-generate" class="mb-4">Try a new food?</button>
             </div>
-            <!-- <div id="drink">
-                <p>map stuff here</p>
-            </div> -->
         </div>
 
     </main>
 
     <script src="./assets/js/script.js"></script>
-
 </body>
 
 </html>

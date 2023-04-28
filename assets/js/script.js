@@ -1,26 +1,25 @@
 var welcomePage = document.querySelector("#welcome-page");
-var nextPage = document.querySelector("#next-page");
-var drinkGen = document.getElementById("drinkGenerate");
-var foodGen = document.getElementById("foodGenerate")
-var generate = document.getElementById("generate")
+var mealPage = document.querySelector("#meal-page");
+var generateDrink = document.querySelector("#drink-generate");
+var generateFood = document.querySelector("#food-generate")
+var generateMeal = document.querySelector("#generate-btn")
+var backToWelc = document.getElementById("back-to-welcome");
 
-generate.addEventListener("click", function () {
+generateMeal.addEventListener("click", function () {
     welcomePage.style.display = "none";
-    nextPage.style.display = "block";
+    mealPage.style.display = "block";
 });
 
-// // this one doesn't quite work - only flashes
-// searchButtonA.addEventListener("click", function() { 
-//     welcomePage.style.display = "none";
-//     nextPage.style.display = "block";
-// }); 
+backToWelc.addEventListener("click", function () {
+  welcomePage.style.display = "block";
+  mealPage.style.display = "none";
+});
 
 // DRINK API 
+var drinkUrl = 'https://www.thecocktaildb.com/api/json/v1/1/random.php';
 
-var requestUrl = 'https://www.thecocktaildb.com/api/json/v1/1/random.php';
-
-function getApiDrink(requestUrl) {
-  fetch(requestUrl)
+function getApiDrink(drinkUrl) {
+  fetch(drinkUrl)
     .then(async function (response) {
       console.log(response);
       if (response.status === 200) {
@@ -33,12 +32,9 @@ function getApiDrink(requestUrl) {
       });
   });
 }
+getApiDrink(drinkUrl);
 
-getApiDrink(requestUrl);
-
-function displayRandomDrink(cocktail){     // 2 start making function trnf data in cocktail arg
-  
-
+function displayRandomDrink(cocktail) {     // 2 start making function trnf data in cocktail arg
   let drink = document.querySelector('#drink'); // 3 grab the element to display in
 
   let drinkName = document.createElement('h2');  // 4 to display name
@@ -57,24 +53,21 @@ function displayRandomDrink(cocktail){     // 2 start making function trnf data 
     if(cocktail.drinks[0][`strIngredient${i}`] == null || ""){ 
       break;
     }
-let ingredients = document.createElement('li'); // 11 to put ingredients in a list
-   ingredients.innerHTML = cocktail.drinks[0][`strIngredient${i}`] + ' -> ' + cocktail.drinks[0][`strMeasure${i}`]; // 12 to put ingredients and measures together directly from JSON array
-   drink.appendChild(ingredients);  // 13 append to display area
-
+    let ingredients = document.createElement('li'); // 11 to put ingredients in a list
+    ingredients.innerHTML = cocktail.drinks[0][`strIngredient${i}`] + ' -> ' + cocktail.drinks[0][`strMeasure${i}`]; // 12 to put ingredients and measures together directly from JSON array
+    drink.appendChild(ingredients);  // 13 append to display area
   }
 
   let inst = document.createElement('p'); // 15 to have a placeholder for instruction 
   inst.innerHTML = cocktail.drinks[0].strInstructions; // 16 get instructions from data
 
   drink.appendChild(inst); //17 append to display area
-
 }
 
 // FOOD API
-
 var foodUrl = 'https://www.themealdb.com/api/json/v1/1/random.php';
 
-function getApi(foodUrl) {
+function getApiFood(foodUrl) {
   fetch(foodUrl)
     .then(async function (response) {
       console.log(response);
@@ -88,12 +81,9 @@ function getApi(foodUrl) {
       });
   });
 }
-
-getApi(foodUrl);
+getApiFood(foodUrl);
 
 function displayRandomFood(meal){     // 2 start making function trnf data in cocktail arg
-  
-
   let food = document.querySelector('#food'); // 3 grab the element to display in
 
   let foodName= document.createElement('h2');  // 4 to display name
@@ -112,9 +102,9 @@ function displayRandomFood(meal){     // 2 start making function trnf data in co
     if(meal.meals[0][`strIngredient${i}`] == null || ""){ 
       break;
     }
-let ingredient = document.createElement('li'); // 11 to put ingredients in a list
-   ingredient.innerHTML = meal.meals[0][`strIngredient${i}`] + ' -> ' + meal.meals[0][`strMeasure${i}`]; // 12 to put ingredients and measures together directly from JSON array
-   food.appendChild(ingredient);  // 13 append to display area
+    let ingredient = document.createElement('li'); // 11 to put ingredients in a list
+    ingredient.innerHTML = meal.meals[0][`strIngredient${i}`] + ' -> ' + meal.meals[0][`strMeasure${i}`]; // 12 to put ingredients and measures together directly from JSON array
+    food.appendChild(ingredient);  // 13 append to display area
 
   }
 
@@ -125,9 +115,8 @@ let ingredient = document.createElement('li'); // 11 to put ingredients in a lis
 
 }
 
-generate.addEventListener("click", buttons);
-
 function buttons() {
-  getApiDrink()
-  getApi()
+  getApiDrink();
+  getApi();
 }
+generateMeal.addEventListener("click", buttons);
