@@ -15,21 +15,14 @@ body {
     background-color: darksalmon;
 } */
 
-/* #welcome-page {
-    text-align: center;
-    display: block;
-} */
-
-
 #welcome-page {
     text-align: center;
     display: block;
 }
 
-
 #welcome-title {
     padding-top: 100px;
-    font-size: 100px;
+    font-size: 70px;
 }
 
 #welcome-words {
@@ -39,21 +32,14 @@ body {
     font-size: 20px;
 }
 
-
-/* #search-btn-init {
-    font-size: 20px;
-    border-radius: 10px;
-} */
-
-#next-page {
+#meal-page {
     margin: auto;
-    /* display: none;  */
+    display: none; 
     text-align: center;
     padding: 20px;
     margin: 20px;
     background-color: slategray;
 }
-
 
 /* @media screen and (max-width: 768px) { 
     main,
