@@ -1,12 +1,15 @@
 //mobile menu
 
-
 var welcomePage = document.querySelector("#welcome-page");
 var mealPage = document.querySelector("#meal-page");
+var favoritePage = document.getElementById("favorite-page");
 var generateDrinkBtn = document.querySelector("#drink-generate");
 var generateFoodBtn = document.querySelector("#food-generate");
 var generateMealBtn = document.querySelector("#meal-generate");
 var backToWelc = document.querySelector("#back-to-welcome");
+var saveFoodBtn = document.getElementById("save-food");
+var saveDrinkBtn = document.getElementById("save-drink");
+var favorites = document.getElementById("my-favorites");
 
 // DRINK API
 function getApiDrink() {
@@ -17,13 +20,14 @@ function getApiDrink() {
     })
     .then(function (data) {
       generateRandomDrink(data); //1 made function to display data
+      console.log(data);
     });
 }
 
 function generateRandomDrink(cocktail) {
   // 2 start making function trf data in cocktail arg
   let drink = document.querySelector("#drink"); // 3 grab the element to display in
-      drink.appendChild(generateDrinkBtn);
+  drink.appendChild(generateDrinkBtn);
 
   let drinkName = document.createElement("h2"); // 4 to display name
   drinkName.innerHTML = cocktail.drinks[0].strDrink; // 5 grab the name from response array
@@ -36,7 +40,11 @@ function generateRandomDrink(cocktail) {
   for (let i = 1; i < 16; i++) {
     // 10 multiple ingredients therefore need loop to go thru them they start from 1 to 15
     // 14 since there were null entries and empty strings therefore to exclude them used IF
-    if (cocktail.drinks[0][`strIngredient${i}`] == null || "") {
+    if (cocktail.drinks[0][`strIngredient${i}`] == null) {
+      break;
+    } else if (cocktail.drinks[0][`strIngredient${i}`] == "") {
+      break;
+    } else if (cocktail.drinks[0][`strIngredient${i}`] == " ") {
       break;
     }
     let ingredients = document.createElement("li"); // 11 to put ingredients in a list
@@ -61,13 +69,14 @@ function getApiFood() {
     })
     .then(function (data) {
       generateRandomFood(data); //1 made function to display data
+      console.log(data);
     });
 }
 
 function generateRandomFood(meal) {
   // 2 start making function trnf data in cocktail arg
   let food = document.querySelector("#food"); // 3 grab the element to display in
-      food.appendChild(generateFoodBtn);
+  food.appendChild(generateFoodBtn);
 
   let foodName = document.createElement("h2"); // 4 to display name
   foodName.innerHTML = meal.meals[0].strMeal; // 5 grab the name from response array
@@ -80,7 +89,11 @@ function generateRandomFood(meal) {
   for (let i = 1; i < 16; i++) {
     // 10 multiple ingredients therefore need loop to go thru them they start from 1 to 15
     // 14 since there were null entries and empty strings therefore to exclude them used IF
-    if (meal.meals[0][`strIngredient${i}`] == null || "") {
+    if (meal.meals[0][`strIngredient${i}`] == null) {
+      break;
+    } else if (meal.meals[0][`strIngredient${i}`] == "") {
+      break;
+    } else if (meal.meals[0][`strIngredient${i}`] == " ") {
       break;
     }
     let ingredient = document.createElement("li"); // 11 to put ingredients in a list
@@ -99,7 +112,13 @@ function generateRandomFood(meal) {
 // shows meal page and hides welcome page
 generateMealBtn.addEventListener("click", function () {
   welcomePage.style.display = "none";
-  mealPage.setAttribute('style', 'display: flex;');
+  mealPage.setAttribute("style", "display: flex;");
+});
+
+favorites.addEventListener("click", function () {
+  welcomePage.style.display = "none";
+  mealPage.style.display = "none";
+  favoritePage.style.display = "block";
 });
 
 // when myMeal logo is clicked, it takes you back to the welcome page
@@ -107,7 +126,6 @@ backToWelc.addEventListener("click", function () {
   welcomePage.style.display = "block";
   window.location.reload();
   mealPage.style.display = "none";
-
 });
 
 // these load a new drink or food individually when each button is clicked
@@ -116,15 +134,23 @@ generateMealBtn.addEventListener("click", function () {
   getApiFood();
 });
 
-
 generateDrinkBtn.addEventListener("click", function () {
-  drink.innerHTML ="";
+  drink.innerHTML = "";
   getApiDrink();
 });
 generateFoodBtn.addEventListener("click", function () {
-  food.innerHTML ="";
+  food.innerHTML = "";
   getApiFood();
 });
+
+// // favorite drink and food
+function saveItemFood() {}
+
+function saveItemDrink() {}
+
+saveFoodBtn.addEventListener("click", saveItemFood);
+
+saveDrinkBtn.addEventListener("click", saveItemDrink);
 
 // DONE: ----------------------
 // moved API url's into the functions (local v global variable error (CORS))

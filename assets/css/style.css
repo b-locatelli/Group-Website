@@ -41,6 +41,15 @@
     /* background-color: slategray; */
 }
 
+#favorites-page {
+    /* margin: auto; */
+    display: none; 
+    /* text-align: center; */
+    /* padding: 20px;
+    margin: 20px; */
+    /* background-color: slategray; */
+}
+
 /* @media screen and (max-width: 768px) { 
     main,
     nav {
