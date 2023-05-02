@@ -17,7 +17,7 @@
             <a id="back-to-welcome" class="navbar-item has-text-warning-light is-size-3 has-text-weight-semibold">myMeal</a>
         </div>
         <div class="navbar-end">
-            <a class="navbar-item has-text-warning-light is-size-4">My Favorites &#127775</a>
+            <a id="my-favorites" class="navbar-item has-text-warning-light is-size-4">My Favorites &#127775</a>
         </div>
     </nav>
 
@@ -40,10 +40,18 @@
         <a id="drink" class="column is-half has-text-centered has-text-black">
             <button id="drink-generate" class="button is-small is-rounded mb-4">Try a new drink?</button>
         </a>
-        <a id="food" class="container column has-text-centered has-text-black">
+        <a id="favorite-drink" class="column has-text-centered has-text-black">
+            <button id="save-drink" class="button is-small is-rounded mb-4">Save to Favorites</button>
+        </a>
+        <a id="food" class="column has-text-centered has-text-black">
             <button id="food-generate" class="button is-small is-rounded mb-4">Try a new food?</button>
         </a>
+        <a id="favorite-food" class="column has-text-centered has-text-black">
+            <button id="save-food" class="button is-small is-rounded mb-4">Save to Favorites</button>
+        </a>
     </article>
+
+    <article id="favorites-page" class="columns m-5 p-5 has-background-warning-light" hidden="true"></article>
 
     <script src="./assets/js/script.js"></script>
 </body>
