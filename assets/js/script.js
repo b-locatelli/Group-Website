@@ -2,7 +2,7 @@
 
 var welcomePage = document.querySelector("#welcome-page");
 var mealPage = document.querySelector("#meal-page");
-var favoritePage = document.getElementById("favorite-page");
+var favoritePage = document.getElementById("favorites-page");
 var generateDrinkBtn = document.querySelector("#drink-generate");
 var generateFoodBtn = document.querySelector("#food-generate");
 var generateMealBtn = document.querySelector("#meal-generate");
@@ -10,6 +10,8 @@ var backToWelc = document.querySelector("#back-to-welcome");
 var saveFoodBtn = document.getElementById("save-food");
 var saveDrinkBtn = document.getElementById("save-drink");
 var favorites = document.getElementById("my-favorites");
+var drinkList = document.getElementById("favDrink")
+var foodList = document.getElementById("favFood")
 
 // DRINK API
 function getApiDrink() {
@@ -20,6 +22,7 @@ function getApiDrink() {
     })
     .then(function (data) {
       generateRandomDrink(data); //1 made function to display data
+      saveDrinkBtn.setAttribute("data", JSON.stringify(data))
       console.log(data);
     });
 }
@@ -28,6 +31,8 @@ function generateRandomDrink(cocktail) {
   // 2 start making function trf data in cocktail arg
   let drink = document.querySelector("#drink"); // 3 grab the element to display in
   drink.appendChild(generateDrinkBtn);
+  drink.appendChild(saveDrinkBtn);
+  
 
   let drinkName = document.createElement("h2"); // 4 to display name
   drinkName.innerHTML = cocktail.drinks[0].strDrink; // 5 grab the name from response array
@@ -68,6 +73,7 @@ function getApiFood() {
       return response.json();
     })
     .then(function (data) {
+      saveFoodBtn.setAttribute("data", JSON.stringify(data))
       generateRandomFood(data); //1 made function to display data
       console.log(data);
     });
@@ -77,6 +83,7 @@ function generateRandomFood(meal) {
   // 2 start making function trnf data in cocktail arg
   let food = document.querySelector("#food"); // 3 grab the element to display in
   food.appendChild(generateFoodBtn);
+  food.appendChild(saveFoodBtn);
 
   let foodName = document.createElement("h2"); // 4 to display name
   foodName.innerHTML = meal.meals[0].strMeal; // 5 grab the name from response array
@@ -144,9 +151,21 @@ generateFoodBtn.addEventListener("click", function () {
 });
 
 // // favorite drink and food
-function saveItemFood() {}
+function saveItemFood() {
+var savedFood = saveFoodBtn.getAttribute("data");
+console.log(savedFood);
+localStorage.setItem("savedFood", savedFood);
+localStorage.getItem(savedFood);
+}
 
-function saveItemDrink() {}
+function saveItemDrink() {
+var savedDrink = saveDrinkBtn.getAttribute("data");
+console.log(savedDrink);
+localStorage.setItem("savedDrink", savedDrink);
+var drinkItem = localStorage.getItem(savedDrink);
+drinkList.innerHTML = drinkItem;
+// drinkList.appendChild(drinkItem);
+} 
 
 saveFoodBtn.addEventListener("click", saveItemFood);
 
