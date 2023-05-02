@@ -1,3 +1,6 @@
+//mobile menu
+
+
 var welcomePage = document.querySelector("#welcome-page");
 var mealPage = document.querySelector("#meal-page");
 var generateDrinkBtn = document.querySelector("#drink-generate");

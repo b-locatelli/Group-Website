@@ -5,47 +5,45 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
-  <link rel="stylesheet" href="assets/css/style.css" />
-  <title>What's for dinner?</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="css/mystyles.css">
+  <title>myMeal | What's for dinner?</title>
 </head>
 
-<body>
+<body class="has-navbar-fixed-top">
 
-    <header>
-        <nav class="navbar has-background-warning-dark is-flex is-justify-content-space-between">
-            <div class="navbar-start">
-                <h1 id="back-to-welcome" class="navbar-item has-text-warning-light is-size-3 has-text-weight-semibold">myMeal</h1>
-            </div>
-            <div class="navbar-end">
-                <h1 class="navbar-item has-text-warning-light is-size-4">My Favorites &#128269</h1>
-            </div>
-        </nav>
-    </header>
+    <nav class="navbar is-transparent is-fixed-top has-background-warning-dark is-flex is-justify-content-space-between">
+        <div class="navbar-brand">
+            <a id="back-to-welcome" class="navbar-item has-text-warning-light is-size-3 has-text-weight-semibold">myMeal</a>
+        </div>
+        <div class="navbar-end">
+            <a class="navbar-item has-text-warning-light is-size-4">My Favorites &#127775</a>
+        </div>
+    </nav>
 
-    <main>
-        <div id="welcome-page">
-            <h1 id="welcome-title" class="has-text-centered has-text-black">What's for Dinner?</h1>
-            <p id="welcome-words">
+    <main id="welcome-page">
+        <section class="columns pt-6">
+            <p id="welcome-title" class="column has-text-centered has-text-black is-size-1">What's for Dinner?</p>
+        </section>
+        <section class="columns is-centered">
+            <p id="welcome-words" class="column is-three-quarters has-text-centered has-text-black is-size-5">
                 myMeal will generate a random food and drink pair for you so that you don't have to decide!
                 The ingredients and recipes listed will show you just how to attain the perfect meal.
             </p>
-            <div class="columns flex">
-                <div class="column flex is-half has-text-black">
-                    <button type="submit" id="meal-generate" class="mb-4">Make a Meal</button>
-                </div>
-            </div>
-        </div>
-
-        <div id="meal-page" class="columns flex" hidden="true">
-            <div id="drink" class="column flex is-half has-text-black">
-                <button type="submit" id="drink-generate" class="mb-4">Try a new drink?</button>
-            </div>
-            <div id="food" class="column flex is-half has-text-black">
-                <button type="submit" id="food-generate" class="mb-4">Try a new food?</button>
-            </div>
-        </div>
-
+        </section>
+        <section class="has-text-centered">
+        <button id="meal-generate" class="button is-rounded mb-4">Make a Meal</button>
+        </section>
     </main>
+
+    <article id="meal-page" class="columns m-5 p-5 has-background-warning-light" hidden="true">
+        <a id="drink" class="column is-half has-text-centered has-text-black">
+            <button id="drink-generate" class="button is-small is-rounded mb-4">Try a new drink?</button>
+        </a>
+        <a id="food" class="container column has-text-centered has-text-black">
+            <button id="food-generate" class="button is-small is-rounded mb-4">Try a new food?</button>
+        </a>
+    </article>
 
     <script src="./assets/js/script.js"></script>
 </body>
