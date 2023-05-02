@@ -190,7 +190,9 @@ function saveItemDrink(event) {
   //   listedDrink.innerHTML = storedDrinks[index].drinks[0].strDrink;
   //   drinkList.appendChild(listedDrink);
   // }
-} 
+}
+
+
 
 function showDrinks() {
   var storedDrinks = JSON.parse(localStorage.getItem("drinkEntries"));
@@ -212,7 +214,6 @@ function showFoods() {
     foodList.appendChild(listedFood);
   }
 }
-
 
 saveFoodBtn.addEventListener("click", saveItemFood);
 saveDrinkBtn.addEventListener("click", saveItemDrink);
