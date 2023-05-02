@@ -10,8 +10,8 @@ var backToWelc = document.querySelector("#back-to-welcome");
 var saveFoodBtn = document.getElementById("save-food");
 var saveDrinkBtn = document.getElementById("save-drink");
 var favorites = document.getElementById("my-favorites");
-var drinkList = document.getElementById("favdrink")
-var foodList = document.getElementById("favfood")
+var drinkList = document.getElementById("fav-drink")
+var foodList = document.getElementById("fav-food")
 var keepFood = []
 var keepDrink = []
 
@@ -24,7 +24,7 @@ function getApiDrink() {
     })
     .then(function (data) {
       generateRandomDrink(data); //1 made function to display data
-      saveDrinkBtn.setAttribute("data", JSON.stringify(data))
+      saveDrinkBtn.setAttribute("data", JSON.stringify(data));
       console.log(data);
     });
 }
@@ -154,49 +154,42 @@ generateFoodBtn.addEventListener("click", function () {
 
 // // favorite drink and food
 function saveItemFood() {
-var savedFood = saveFoodBtn.getAttribute("data");
-console.log(savedFood);
-localStorage.setItem("savedFood", savedFood);
-var foodItem = localStorage.getItem("savedFood")
-var parseFood = JSON.parse(foodItem)
-keepFood.push(parseFood)
-localStorage.setItem("foodEntries", JSON.stringify(keepFood));
-var storedFood = JSON.parse(localStorage.getItem("foodEntries"));
-var result = ""
-for (var index = 0; index < storedFood.length; index++) {
-  console.log(storedFood[index])
-  result = result + storedFood[index].meals[0].strMeal + " "
-}
-foodList.textContent = result
-// foodList.textContent = parseFood.meals[0].strMeal
+  var savedFood = saveFoodBtn.getAttribute("data");
+  console.log(savedFood);
+  localStorage.setItem("savedFood", savedFood);
+  var foodItem = localStorage.getItem("savedFood");
+  var parseFood = JSON.parse(foodItem);
+  keepFood.push(parseFood);
+  localStorage.setItem("foodEntries", JSON.stringify(keepFood));
+  var storedFood = JSON.parse(localStorage.getItem("foodEntries"));
+  var result = "";
+  var listedFood = document.createElement("li");
+  for (var index = 0; index < storedFood.length; index++) {
+    listedFood.innerHTML = storedFood[index].meals[0].strMeal;
+    foodList.appendChild(listedFood);
+  }
 }
 
 function saveItemDrink() {
-var savedDrink = saveDrinkBtn.getAttribute("data");
-console.log(savedDrink);
-localStorage.setItem("savedDrink", savedDrink);
-var drinkItem = localStorage.getItem("savedDrink");
-var parseDrink = JSON.parse(drinkItem)
-// drinkList.textContent = parseDrink.drinks[0].strDrink
-keepDrink.push(parseDrink)
-localStorage.setItem("drinkEntries", JSON.stringify(keepDrink));
-var storedDrinks = JSON.parse(localStorage.getItem("drinkEntries"));
-var result = ""
-var listedDrink = document.createElement("li")
-for (var index = 0; index < storedDrinks.length; index++) {
-  console.log(storedDrinks[index])
-  // result = result + storedDrinks[index].drinks[0].strDrink + " "
-  listedDrink.append(storedDrinks[index].drinks[0].strDrink + " ")
-}
-drinkList.textContent = result
-drinkList.appendChild(listedDrink)
+  var savedDrink = saveDrinkBtn.getAttribute("data");
+  console.log(savedDrink);
+  localStorage.setItem("savedDrink", savedDrink);
+  var drinkItem = localStorage.getItem("savedDrink");
+  var parseDrink = JSON.parse(drinkItem);
+  // drinkList.textContent = parseDrink.drinks[0].strDrink;
+  keepDrink.push(parseDrink);
+  localStorage.setItem("drinkEntries", JSON.stringify(keepDrink));
+  var storedDrinks = JSON.parse(localStorage.getItem("drinkEntries"));
+  var result = "";
+  var listedDrink = document.createElement("li");
+  for (var index = 0; index < storedDrinks.length; index++) {
+    listedDrink.innerHTML = storedDrinks[index].drinks[0].strDrink;
+    drinkList.appendChild(listedDrink);
+  }
 } 
 
 
-
-
 saveFoodBtn.addEventListener("click", saveItemFood);
-
 saveDrinkBtn.addEventListener("click", saveItemDrink);
 
 // DONE: ----------------------
