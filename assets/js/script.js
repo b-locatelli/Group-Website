@@ -1,8 +1,7 @@
 //mobile menu
-
 var welcomePage = document.querySelector("#welcome-page");
 var mealPage = document.querySelector("#meal-page");
-var favoritePage = document.getElementById("favorites-page");
+var favoritesPage = document.getElementById("favorites-page");
 var generateDrinkBtn = document.querySelector("#drink-generate");
 var generateFoodBtn = document.querySelector("#food-generate");
 var generateMealBtn = document.querySelector("#meal-generate");
@@ -14,6 +13,7 @@ var drinkList = document.getElementById("fav-drink")
 var foodList = document.getElementById("fav-food")
 var keepFood = []
 var keepDrink = []
+
 
 // DRINK API
 function getApiDrink() {
@@ -67,6 +67,7 @@ function generateRandomDrink(cocktail) {
   drink.appendChild(inst); //17 append to display area
 }
 
+
 // FOOD API
 function getApiFood() {
   var foodUrl = "https://www.themealdb.com/api/json/v1/1/random.php";
@@ -118,6 +119,7 @@ function generateRandomFood(meal) {
   food.appendChild(instruction); //17 append to display area
 }
 
+
 // shows meal page and hides welcome page
 generateMealBtn.addEventListener("click", function () {
   welcomePage.style.display = "none";
@@ -127,7 +129,9 @@ generateMealBtn.addEventListener("click", function () {
 favorites.addEventListener("click", function () {
   welcomePage.style.display = "none";
   mealPage.style.display = "none";
-  favoritePage.style.display = "block";
+  showDrinks();
+  showFoods();
+  favoritesPage.style.display = "block";
 });
 
 // when myMeal logo is clicked, it takes you back to the welcome page
@@ -135,6 +139,7 @@ backToWelc.addEventListener("click", function () {
   welcomePage.style.display = "block";
   window.location.reload();
   mealPage.style.display = "none";
+  favoritesPage.style.display = "none";
 });
 
 // these load a new drink or food individually when each button is clicked
@@ -152,41 +157,61 @@ generateFoodBtn.addEventListener("click", function () {
   getApiFood();
 });
 
-// // favorite drink and food
+// favorite drink and food
 function saveItemFood() {
   var savedFood = saveFoodBtn.getAttribute("data");
-  console.log(savedFood);
+  //console.log(savedFood);
   localStorage.setItem("savedFood", savedFood);
   var foodItem = localStorage.getItem("savedFood");
   var parseFood = JSON.parse(foodItem);
   keepFood.push(parseFood);
   localStorage.setItem("foodEntries", JSON.stringify(keepFood));
-  var storedFood = JSON.parse(localStorage.getItem("foodEntries"));
-  var result = "";
-  var listedFood = document.createElement("li");
-  for (var index = 0; index < storedFood.length; index++) {
-    listedFood.innerHTML = storedFood[index].meals[0].strMeal;
-    foodList.appendChild(listedFood);
-  }
+  // var storedFood = JSON.parse(localStorage.getItem("foodEntries"));
+  // var listedFood = document.createElement("li");
+  // for (var index = 0; index < storedFood.length; index++) {
+  //   listedFood.innerHTML = storedFood[index].meals[0].strMeal;
+  //   foodList.appendChild(listedFood);
+  // }
 }
 
-function saveItemDrink() {
+function saveItemDrink(event) {
+  event.preventDefault();
   var savedDrink = saveDrinkBtn.getAttribute("data");
-  console.log(savedDrink);
+  //console.log(savedDrink);
   localStorage.setItem("savedDrink", savedDrink);
   var drinkItem = localStorage.getItem("savedDrink");
   var parseDrink = JSON.parse(drinkItem);
-  // drinkList.textContent = parseDrink.drinks[0].strDrink;
   keepDrink.push(parseDrink);
   localStorage.setItem("drinkEntries", JSON.stringify(keepDrink));
+
+  // var storedDrinks = JSON.parse(localStorage.getItem("drinkEntries"));
+  // var listedDrink = document.createElement("li");
+  // for (var index = 0; index < storedDrinks.length; index++) {
+  //   listedDrink.innerHTML = storedDrinks[index].drinks[0].strDrink;
+  //   drinkList.appendChild(listedDrink);
+  // }
+} 
+
+function showDrinks() {
   var storedDrinks = JSON.parse(localStorage.getItem("drinkEntries"));
-  var result = "";
-  var listedDrink = document.createElement("li");
+  var listedDrink;
   for (var index = 0; index < storedDrinks.length; index++) {
-    listedDrink.innerHTML = storedDrinks[index].drinks[0].strDrink;
+    listedDrink = document.createElement("li");
+    console.log(storedDrinks[index].drinks[0].strDrink);
+    listedDrink.textContent = storedDrinks[index].drinks[0].strDrink + " (drink)";
     drinkList.appendChild(listedDrink);
   }
-} 
+}
+
+function showFoods() {
+  var storedFood = JSON.parse(localStorage.getItem("foodEntries"));
+  var listedFood;
+  for (var index = 0; index < storedFood.length; index++) {
+    listedFood = document.createElement("li");
+    listedFood.innerHTML = storedFood[index].meals[0].strMeal + " (food)";
+    foodList.appendChild(listedFood);
+  }
+}
 
 
 saveFoodBtn.addEventListener("click", saveItemFood);
