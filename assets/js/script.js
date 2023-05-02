@@ -162,13 +162,13 @@ var parseFood = JSON.parse(foodItem)
 keepFood.push(parseFood)
 localStorage.setItem("foodEntries", JSON.stringify(keepFood));
 var storedFood = JSON.parse(localStorage.getItem("foodEntries"));
-var result = ""
+var listedFood;
 for (var index = 0; index < storedFood.length; index++) {
   console.log(storedFood[index])
-  result = result + storedFood[index].meals[0].strMeal + " "
+  listedFood = document.createElement("li")
+ listedFood.textContent = storedFood[index].meals[0].strMeal + " "
 }
-foodList.textContent = result
-// foodList.textContent = parseFood.meals[0].strMeal
+foodList.appendChild(listedFood)
 }
 
 function saveItemDrink() {
@@ -177,21 +177,17 @@ console.log(savedDrink);
 localStorage.setItem("savedDrink", savedDrink);
 var drinkItem = localStorage.getItem("savedDrink");
 var parseDrink = JSON.parse(drinkItem)
-// drinkList.textContent = parseDrink.drinks[0].strDrink
 keepDrink.push(parseDrink)
 localStorage.setItem("drinkEntries", JSON.stringify(keepDrink));
 var storedDrinks = JSON.parse(localStorage.getItem("drinkEntries"));
-var result = ""
-var listedDrink = document.createElement("li")
+var listedDrink;
 for (var index = 0; index < storedDrinks.length; index++) {
   console.log(storedDrinks[index])
-  // result = result + storedDrinks[index].drinks[0].strDrink + " "
-  listedDrink.append(storedDrinks[index].drinks[0].strDrink + " ")
+  listedDrink = document.createElement("li")
+  listedDrink.textContent = storedDrinks[index].drinks[0].strDrink + " "
 }
-drinkList.textContent = result
 drinkList.appendChild(listedDrink)
 } 
-
 
 
 
