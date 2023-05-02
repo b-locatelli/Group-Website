@@ -4,10 +4,10 @@
     padding: none;
 } */
 
-body {
+/* body {
     font-family: sans-serif;
     background-color: blanchedalmond;
-}
+} */
 
 /*  nav {
     display: flex;
@@ -15,30 +15,30 @@ body {
     background-color: darksalmon;
 } */
 
-#welcome-page {
+/* #welcome-page {
     text-align: center;
     display: block;
-}
+} */
 
-#welcome-title {
+/* #welcome-title {
     padding-top: 100px;
     font-size: 70px;
-}
+} */
 
-#welcome-words {
+/* #welcome-words {
     width: 50%;
     margin: auto;
     padding-bottom: 50px;
     font-size: 20px;
-}
+} */
 
 #meal-page {
-    margin: auto;
+    /* margin: auto; */
     display: none; 
-    text-align: center;
-    padding: 20px;
-    margin: 20px;
-    background-color: slategray;
+    /* text-align: center; */
+    /* padding: 20px;
+    margin: 20px; */
+    /* background-color: slategray; */
 }
 
 /* @media screen and (max-width: 768px) { 
