@@ -160,36 +160,21 @@ generateFoodBtn.addEventListener("click", function () {
 // favorite drink and food
 function saveItemFood() {
   var savedFood = saveFoodBtn.getAttribute("data");
-  //console.log(savedFood);
   localStorage.setItem("savedFood", savedFood);
   var foodItem = localStorage.getItem("savedFood");
   var parseFood = JSON.parse(foodItem);
   keepFood.push(parseFood);
   localStorage.setItem("foodEntries", JSON.stringify(keepFood));
-  // var storedFood = JSON.parse(localStorage.getItem("foodEntries"));
-  // var listedFood = document.createElement("li");
-  // for (var index = 0; index < storedFood.length; index++) {
-  //   listedFood.innerHTML = storedFood[index].meals[0].strMeal;
-  //   foodList.appendChild(listedFood);
-  // }
 }
 
 function saveItemDrink(event) {
   event.preventDefault();
   var savedDrink = saveDrinkBtn.getAttribute("data");
-  //console.log(savedDrink);
   localStorage.setItem("savedDrink", savedDrink);
   var drinkItem = localStorage.getItem("savedDrink");
   var parseDrink = JSON.parse(drinkItem);
   keepDrink.push(parseDrink);
   localStorage.setItem("drinkEntries", JSON.stringify(keepDrink));
-
-  // var storedDrinks = JSON.parse(localStorage.getItem("drinkEntries"));
-  // var listedDrink = document.createElement("li");
-  // for (var index = 0; index < storedDrinks.length; index++) {
-  //   listedDrink.innerHTML = storedDrinks[index].drinks[0].strDrink;
-  //   drinkList.appendChild(listedDrink);
-  // }
 }
 
 
@@ -223,15 +208,13 @@ saveDrinkBtn.addEventListener("click", saveItemDrink);
 // made the buttons call the api func instead of random func bc it needs to be reloaded for new drink/food to appear
 // made the generate buttons work
 // added a back to welcome page function and organized but didn't change getApi's much
-
-// NOT DONE: ----------------
 // MVP ERROR: generateRandom functions simply add new recipe to the page rather than replacing old
 // MVP FIX: when click button, replace old recipe with new
-
 // js TODO: use local storage
 // maybe: add save function for favorite recipes. access in navbar or create sidebar linked in navbar myMeal
 
+// TODO
 // css TODO: colors, recipes as columns, flex, button styling, remove style.css
 // more TODO: add comments, READ.ME
 
-// make interactive? use modals?
+
