@@ -185,7 +185,7 @@ function showDrinks() {
   for (var index = 0; index < storedDrinks.length; index++) {
     listedDrink = document.createElement("li");
     console.log(storedDrinks[index].drinks[0].strDrink);
-    listedDrink.textContent = storedDrinks[index].drinks[0].strDrink + " (drink)";
+    listedDrink.textContent = storedDrinks[index].drinks[0].strDrink;
     drinkList.appendChild(listedDrink);
   }
 }
@@ -195,7 +195,7 @@ function showFoods() {
   var listedFood;
   for (var index = 0; index < storedFood.length; index++) {
     listedFood = document.createElement("li");
-    listedFood.innerHTML = storedFood[index].meals[0].strMeal + " (food)";
+    listedFood.innerHTML = storedFood[index].meals[0].strMeal;
     foodList.appendChild(listedFood);
   }
 }
