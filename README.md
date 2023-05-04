@@ -13,9 +13,9 @@ Technologies used:
 - Google fonts
 
 ## Webpage Access
- - Github Repository ()
- - Deployed Webpage ()
+ - Github Repository (https://github.com/b-locatelli/myMeal-Generator)
+ - Deployed Webpage (https://b-locatelli.github.io/myMeal-Generator/)
 
 ## Image of Webpage
-
+![gif of application](./assets/images/app.gif)
 
