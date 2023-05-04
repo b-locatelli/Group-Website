@@ -11,8 +11,8 @@ var saveDrinkBtn = document.getElementById("save-drink");
 var favorites = document.getElementById("my-favorites");
 var drinkList = document.getElementById("fav-drink")
 var foodList = document.getElementById("fav-food")
-var keepFood = []
-var keepDrink = []
+var keepFood = JSON.parse(window.localStorage.getItem("foodEntries")) || []
+var keepDrink = JSON.parse(window.localStorage.getItem("drinkEntries")) || []
 
 
 // DRINK API
