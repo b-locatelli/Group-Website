@@ -17,5 +17,5 @@ Technologies used:
  - Deployed Webpage ()
 
 ## Image of Webpage
-
+![gif of application](./assets/images/app.gif)
 
