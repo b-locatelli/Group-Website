@@ -203,18 +203,6 @@ function showFoods() {
 saveFoodBtn.addEventListener("click", saveItemFood);
 saveDrinkBtn.addEventListener("click", saveItemDrink);
 
-// DONE: ----------------------
-// moved API url's into the functions (local v global variable error (CORS))
-// made the buttons call the api func instead of random func bc it needs to be reloaded for new drink/food to appear
-// made the generate buttons work
-// added a back to welcome page function and organized but didn't change getApi's much
-// MVP ERROR: generateRandom functions simply add new recipe to the page rather than replacing old
-// MVP FIX: when click button, replace old recipe with new
-// js TODO: use local storage
-// maybe: add save function for favorite recipes. access in navbar or create sidebar linked in navbar myMeal
 
-// TODO
-// css TODO: colors, recipes as columns, flex, button styling, remove style.css
-// more TODO: add comments, READ.ME
 
 
